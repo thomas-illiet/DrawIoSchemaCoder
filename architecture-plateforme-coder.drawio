@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="Electron" modified="2026-08-08T18:33:29.000Z" agent="Codex" version="31.1.8" type="device" compressed="false">
+<mxfile host="Electron" modified="2026-08-08T20:34:37.000Z" agent="Codex" version="31.1.8" type="device" compressed="false">
   <diagram id="overview" name="01 — Executive overview">
     <mxGraphModel dx="1720" dy="968" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0" background="#FFFFFF">
       <root>
@@ -30,38 +30,44 @@
         <mxCell id="p1_central" value="Central Kubernetes cluster — shared control plane" style="swimlane;horizontal=1;startSize=46;rounded=1;html=1;fillColor=#F8FAFC;swimlaneFillColor=#E2E8F0;strokeColor=#64748B;strokeWidth=2;fontStyle=1;fontSize=18;fontColor=#0F172A;" vertex="1" parent="1">
           <mxGeometry x="350" y="150" width="1000" height="700" as="geometry" />
         </mxCell>
-        <mxCell id="p1_entry" value="&lt;b&gt;Cluster ingress paths&lt;/b&gt;&lt;br&gt;L4 LB → Caddy&lt;br&gt;TLS LB → HAProxy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=2;fontSize=16;fontColor=#1E3A8A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p1_central">
-          <mxGeometry x="40" y="85" width="260" height="130" as="geometry" />
+        <mxCell id="p1_entry" value="&lt;b&gt;Cluster ingress paths&lt;/b&gt;&lt;br&gt;L4 LB → Caddy → WAF&lt;br&gt;TLS LB → HAProxy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=2;fontSize=16;fontColor=#1E3A8A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p1_central">
+          <mxGeometry x="40" y="85" width="250" height="130" as="geometry" />
         </mxCell>
         <mxCell id="p1_entry_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%230EA5E9%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M256%200c4.6%200%209.2%201%2013.4%202.9L457.7%2082.8c22%209.3%2038.4%2031%2038.3%2057.2c-.5%2099.2-41.3%20280.7-213.6%20363.2c-16.7%208-36.1%208-52.8%200C57.3%20420.7%2016.5%20239.2%2016%20140c-.1-26.2%2016.3-47.9%2038.3-57.2L242.7%202.9C246.8%201%20251.4%200%20256%200z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p1_entry">
           <mxGeometry x="16" y="49" width="32" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p1_services" value="&lt;b&gt;Shared platform services&lt;/b&gt;&lt;br&gt;Identity · Manager · tools" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#EA580C;strokeWidth=2;fontSize=16;fontColor=#7C2D12;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p1_central">
-          <mxGeometry x="370" y="85" width="260" height="130" as="geometry" />
+          <mxGeometry x="40" y="300" width="250" height="120" as="geometry" />
         </mxCell>
         <mxCell id="p1_services_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%23EA580C%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M495.9%20166.6c3.2%208.7%20.5%2018.4-6.4%2024.6l-43.3%2039.4c1.1%208.3%201.7%2016.8%201.7%2025.4s-.6%2017.1-1.7%2025.4l43.3%2039.4c6.9%206.2%209.6%2015.9%206.4%2024.6c-4.4%2011.9-9.7%2023.3-15.8%2034.3l-4.7%208.1c-6.6%2011-14%2021.4-22.1%2031.2c-5.9%207.2-15.7%209.6-24.5%206.8l-55.7-17.7c-13.4%2010.3-28.2%2018.9-44%2025.4l-12.5%2057.1c-2%209.1-9%2016.3-18.2%2017.8c-13.8%202.3-28%203.5-42.5%203.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1%20425.9c-8.8%202.8-18.6%20.3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4%206.4-24.6l43.3-39.4C64.6%20273.1%2064%20264.6%2064%20256s.6-17.1%201.7-25.4L22.4%20191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9%209.7-23.3%2015.8-34.3l4.7-8.1c6.6-11%2014-21.4%2022.1-31.2c5.9-7.2%2015.7-9.6%2024.5-6.8l55.7%2017.7c13.4-10.3%2028.2-18.9%2044-25.4l12.5-57.1c2-9.1%209-16.3%2018.2-17.8C227.3%201.2%20241.5%200%20256%200s28.7%201.2%2042.5%203.5c9.2%201.5%2016.2%208.7%2018.2%2017.8l12.5%2057.1c15.8%206.5%2030.6%2015.1%2044%2025.4l55.7-17.7c8.8-2.8%2018.6-.3%2024.5%206.8c8.1%209.8%2015.5%2020.2%2022.1%2031.2l4.7%208.1c6.1%2011%2011.4%2022.4%2015.8%2034.3zM256%20336a80%2080%200%201%200%200-160%2080%2080%200%201%200%200%20160z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p1_services">
           <mxGeometry x="16" y="49" width="32" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="p1_coders" value="&lt;b&gt;Coder 1…N&lt;/b&gt;&lt;br&gt;Control planes only&lt;br&gt;Workspace page · access proxy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=2;fontSize=16;fontColor=#1E3A8A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p1_central">
-          <mxGeometry x="700" y="85" width="260" height="130" as="geometry" />
+        <mxCell id="p1_waf" value="&lt;b&gt;In-house WAF 1…N&lt;/b&gt;&lt;br&gt;One logical WAF per Coder&lt;br&gt;Selected function restrictions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDFA;strokeColor=#0F766E;strokeWidth=2;fontSize=15;fontColor=#134E4A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=12;spacingTop=6;spacingBottom=6;" vertex="1" parent="p1_central">
+          <mxGeometry x="375" y="85" width="250" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_waf_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cpath%20fill%3D%22%230F766E%22%20d%3D%22M32%204%2056%2014v18c0%2014-10%2024-24%2028C18%2056%208%2046%208%2032V14L32%204Z%22%2F%3E%3Cpath%20d%3D%22M18%2024h28M18%2032h28M18%2040h28M25%2020v8M39%2028v8M25%2036v8%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p1_waf">
+          <mxGeometry x="16" y="49" width="32" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_coders" value="&lt;b&gt;Coder 1…N&lt;/b&gt;&lt;br&gt;Control planes only&lt;br&gt;Behind dedicated WAF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=2;fontSize=16;fontColor=#1E3A8A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p1_central">
+          <mxGeometry x="710" y="85" width="250" height="130" as="geometry" />
         </mxCell>
         <mxCell id="p1_coders_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20rx%3D%2246%22%20fill%3D%22%230F172A%22%2F%3E%3Cpath%20d%3D%22M73.6815%2064C116.338%2064.0001%20140.252%2085.6012%20141.06%20117.397L104.22%20118.606C103.25%20100.98%2088.6272%2089.4022%2073.6815%2089.7474C53.1607%2090.1795%2037.9709%20104.782%2037.9708%20127.938C37.9708%20151.093%2053.1603%20165.437%2073.6815%20165.437C88.6272%20165.436%20102.926%20154.377%20104.543%20136.75L141.383%20137.615C140.414%20169.929%20115.046%20191.875%2073.6815%20191.875C32.3167%20191.875%200%20166.818%200%20127.938C0.000151497%2088.8837%2031.0241%2064%2073.6815%2064ZM256%2067.7783V188.742H159.053V67.7783H256Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p1_coders">
           <mxGeometry x="16" y="49" width="32" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p1_no_workspace" value="&lt;b&gt;No workspace pods&lt;/b&gt;&lt;br&gt;in the central cluster" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#DC2626;strokeWidth=2;fontSize=16;fontColor=#991B1B;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p1_central">
-          <mxGeometry x="40" y="390" width="260" height="120" as="geometry" />
+          <mxGeometry x="40" y="450" width="920" height="70" as="geometry" />
         </mxCell>
         <mxCell id="p1_no_workspace_icon" value="" style="shape=mxgraph.kubernetes.icon2;prIcon=pod;aspect=fixed;sketch=0;html=1;dashed=0;whiteSpace=wrap;fillColor=#326CE5;strokeColor=#FFFFFF;pointerEvents=0;" vertex="1" connectable="0" parent="p1_no_workspace">
-          <mxGeometry x="16" y="44" width="32" height="32" as="geometry" />
+          <mxGeometry x="16" y="19" width="32" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p1_monitor" value="&lt;b&gt;Central observability&lt;/b&gt;&lt;br&gt;Prometheus · Grafana" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#059669;strokeWidth=2;fontSize=16;fontColor=#065F46;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p1_central">
-          <mxGeometry x="370" y="390" width="260" height="120" as="geometry" />
+          <mxGeometry x="375" y="300" width="250" height="120" as="geometry" />
         </mxCell>
         <mxCell id="p1_monitor_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%23059669%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M64%2064c0-17.7-14.3-32-32-32S0%2046.3%200%2064L0%20400c0%2044.2%2035.8%2080%2080%2080l400%200c17.7%200%2032-14.3%2032-32s-14.3-32-32-32L80%20416c-8.8%200-16-7.2-16-16L64%2064zm406.6%2086.6c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200L320%20210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3%200l-112%20112c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200L240%20221.3l57.4%2057.4c12.5%2012.5%2032.8%2012.5%2045.3%200l128-128z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p1_monitor">
           <mxGeometry x="16" y="44" width="32" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p1_namespaces" value="&lt;b&gt;3 dedicated namespaces&lt;/b&gt;&lt;br&gt;app-code-infra&lt;br&gt;app-code-instance&lt;br&gt;app-code-monitor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontSize=15;fontColor=#475569;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p1_central">
-          <mxGeometry x="700" y="390" width="260" height="120" as="geometry" />
+          <mxGeometry x="710" y="300" width="250" height="120" as="geometry" />
         </mxCell>
         <mxCell id="p1_namespaces_icon" value="" style="shape=mxgraph.kubernetes.icon2;prIcon=pod;aspect=fixed;sketch=0;html=1;dashed=0;whiteSpace=wrap;fillColor=#326CE5;strokeColor=#FFFFFF;pointerEvents=0;" vertex="1" connectable="0" parent="p1_namespaces">
           <mxGeometry x="16" y="44" width="32" height="32" as="geometry" />
@@ -70,7 +76,7 @@
           <mxGeometry x="1430" y="150" width="430" height="700" as="geometry" />
         </mxCell>
         <mxCell id="p1_workloads" value="&lt;b&gt;Workload clusters 1…N&lt;/b&gt;&lt;br&gt;Workspace pods · agents&lt;br&gt;VS Code · OpenCode · n8n&lt;br&gt;Terminal · File Browser · AI Gateway&lt;br&gt;Storage: Local Path/XFS quota · NFS/Trident&lt;br&gt;Optional GPU when available&lt;br&gt;Dedicated 1:1 mapping" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#EA580C;strokeWidth=2;fontSize=16;fontColor=#7C2D12;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p1_external">
-          <mxGeometry x="30" y="90" width="370" height="260" as="geometry" />
+          <mxGeometry x="30" y="65" width="370" height="260" as="geometry" />
         </mxCell>
         <mxCell id="p1_workloads_icon" value="" style="shape=mxgraph.kubernetes.icon2;prIcon=pod;aspect=fixed;sketch=0;html=1;dashed=0;whiteSpace=wrap;fillColor=#326CE5;strokeColor=#FFFFFF;pointerEvents=0;" vertex="1" connectable="0" parent="p1_workloads">
           <mxGeometry x="16" y="114" width="32" height="32" as="geometry" />
@@ -87,31 +93,27 @@
         <mxCell id="p1_e_users_entry" value="Web · proxy" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1_users" target="p1_entry">
           <mxGeometry relative="1" as="geometry"></mxGeometry>
         </mxCell>
-        <mxCell id="p1_e_platform_services" value="Operations" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1_platform" target="p1_services">
+        <mxCell id="p1_e_platform_services" value="Ops" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1_platform" target="p1_services">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="320" y="575" />
-              <mxPoint x="320" y="450" />
-              <mxPoint x="690" y="450" />
-              <mxPoint x="690" y="300" />
+              <mxPoint x="320" y="510" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="p1_e_entry_services" value="HAProxy" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1_entry" target="p1_services">
+        <mxCell id="p1_e_entry_services" value="HAProxy" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_entry" target="p1_services">
           <mxGeometry relative="1" as="geometry"></mxGeometry>
         </mxCell>
-        <mxCell id="p1_e_entry_coders" value="Workspace access · Caddy" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_entry" target="p1_coders">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="680" y="215" />
-              <mxPoint x="1180" y="215" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="p1_e_coders_workloads" value="Provisioning only · K8s API" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;dashed=1;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1_coders" target="p1_workloads">
+        <mxCell id="p1_e_entry_waf" value="Caddy" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1_entry" target="p1_waf">
           <mxGeometry relative="1" as="geometry"></mxGeometry>
         </mxCell>
-        <mxCell id="p1_footer" value="&lt;b&gt;Key decisions&lt;/b&gt;&lt;br&gt;① Central cluster: control plane only; one Coder per Workload cluster. &amp;nbsp;&amp;nbsp; ② Workspace access uses the Coder web page or access proxy; only the agent tunnel reaches Workload products. &amp;nbsp;&amp;nbsp; ③ L4 passthrough feeds Caddy TLS; Certis manages the certificate on the TLS LB before HAProxy. &amp;nbsp;&amp;nbsp; ④ Argo CD and Prometheus stop at the Workload boundary." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0F172A;fontColor=#FFFFFF;fontSize=16;align=left;verticalAlign=middle;spacingLeft=22;spacingRight=22;spacingTop=12;spacingBottom=12;" vertex="1" parent="1">
+        <mxCell id="p1_e_waf_coders" value="Filtered" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1_waf" target="p1_coders">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="p1_e_coders_workloads" value="Provisioning only · K8s API" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;dashed=1;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.75;entryX=0;entryY=0.45;" edge="1" parent="1" source="p1_coders" target="p1_workloads">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="p1_footer" value="&lt;b&gt;Key decisions&lt;/b&gt;&lt;br&gt;① Central cluster: control plane only; one in-house WAF and one Coder per Workload cluster. &amp;nbsp;&amp;nbsp; ② Caddy routes every instance through its dedicated WAF before Coder; the WAF restricts selected product functions. &amp;nbsp;&amp;nbsp; ③ Workspace access uses the Coder web page or access proxy; only the agent tunnel reaches Workload products. &amp;nbsp;&amp;nbsp; ④ L4 passthrough feeds Caddy TLS; Certis manages the certificate on the TLS LB before HAProxy. &amp;nbsp;&amp;nbsp; ⑤ Argo CD and Prometheus stop at the Workload boundary." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0F172A;fontColor=#FFFFFF;fontSize=16;align=left;verticalAlign=middle;spacingLeft=22;spacingRight=22;spacingTop=12;spacingBottom=12;" vertex="1" parent="1">
           <mxGeometry x="60" y="895" width="1800" height="140" as="geometry" />
         </mxCell>
       </root>
@@ -126,41 +128,47 @@
         <mxCell id="p2_title" value="&lt;b&gt;HTTP exposure and TLS ownership&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=32;fontColor=#0F172A;" vertex="1" parent="1">
           <mxGeometry x="60" y="32" width="1450" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="p2_subtitle" value="Coder: L4 Load Balancer → Caddy TLS · Other products: Certis-managed infrastructure TLS Load Balancer → HAProxy" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=18;fontColor=#475569;" vertex="1" parent="1">
+        <mxCell id="p2_subtitle" value="Coder: L4 Load Balancer → Caddy TLS → per-instance WAF → Coder · Other products: Certis TLS Load Balancer → HAProxy" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=18;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="60" y="84" width="1450" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p2_badge" value="&lt;b&gt;02 / 09 · EXPOSURE&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0F172A;fontColor=#FFFFFF;fontStyle=1;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="1580" y="44" width="280" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="p2_caddy_lane" value="Coder-mediated Workspace access and agent-initiated channel — infrastructure L4 Load Balancer → Caddy TLS" style="swimlane;horizontal=1;startSize=46;rounded=1;html=1;fillColor=#EFF6FF;swimlaneFillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontStyle=1;fontSize=18;fontColor=#1E3A8A;" vertex="1" parent="1">
+        <mxCell id="p2_caddy_lane" value="Coder-mediated Workspace access and agent channel — L4 Load Balancer → Caddy TLS → dedicated WAF → Coder" style="swimlane;horizontal=1;startSize=46;rounded=1;html=1;fillColor=#EFF6FF;swimlaneFillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontStyle=1;fontSize=18;fontColor=#1E3A8A;" vertex="1" parent="1">
           <mxGeometry x="60" y="150" width="1800" height="360" as="geometry" />
         </mxCell>
         <mxCell id="p2_caddy_clients" value="&lt;b&gt;Coder clients and agents&lt;/b&gt;&lt;br&gt;Browser: workspace page&lt;br&gt;Add-on / CLI: access proxy&lt;br&gt;Agent: tunnel initiation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=15;fontColor=#1E3A8A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p2_caddy_lane">
-          <mxGeometry x="100" y="60" width="260" height="175" as="geometry" />
+          <mxGeometry x="60" y="60" width="250" height="175" as="geometry" />
         </mxCell>
         <mxCell id="p2_caddy_clients_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%232563EB%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20448%20512%22%3E%3Cpath%20d%3D%22M224%20256A128%20128%200%201%200%20224%200a128%20128%200%201%200%200%20256zm-45.7%2048C79.8%20304%200%20383.8%200%20482.3C0%20498.7%2013.3%20512%2029.7%20512l388.6%200c16.4%200%2029.7-13.3%2029.7-29.7C448%20383.8%20368.2%20304%20269.7%20304l-91.4%200z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p2_caddy_clients">
           <mxGeometry x="16" y="71" width="32" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p2_l4_lb" value="&lt;b&gt;Infrastructure L4 LB&lt;/b&gt;&lt;br&gt;TCP 443 passthrough&lt;br&gt;No TLS termination" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#64748B;strokeWidth=2;dashed=1;fontSize=16;fontColor=#334155;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p2_caddy_lane">
-          <mxGeometry x="490" y="75" width="280" height="145" as="geometry" />
+          <mxGeometry x="400" y="75" width="260" height="145" as="geometry" />
         </mxCell>
         <mxCell id="p2_l4_lb_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%232563EB%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20448%20512%22%3E%3Cpath%20d%3D%22M438.6%20150.6c12.5-12.5%2012.5-32.8%200-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3%200s-12.5%2032.8%200%2045.3L338.7%2096%2032%2096C14.3%2096%200%20110.3%200%20128s14.3%2032%2032%2032l306.7%200-41.4%2041.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200l96-96zm-333.3%20352c12.5%2012.5%2032.8%2012.5%2045.3%200s12.5-32.8%200-45.3L109.3%20416%20416%20416c17.7%200%2032-14.3%2032-32s-14.3-32-32-32l-306.7%200%2041.4-41.4c12.5-12.5%2012.5-32.8%200-45.3s-32.8-12.5-45.3%200l-96%2096c-12.5%2012.5-12.5%2032.8%200%2045.3l96%2096z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p2_l4_lb">
           <mxGeometry x="16" y="56" width="32" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="p2_caddy" value="&lt;b&gt;Shared Caddy&lt;/b&gt;&lt;br&gt;Deployment · NodePort&lt;br&gt;TLS termination · ACME&lt;br&gt;Coder targets only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=16;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p2_caddy_lane">
-          <mxGeometry x="900" y="75" width="300" height="145" as="geometry" />
+        <mxCell id="p2_caddy" value="&lt;b&gt;Shared Caddy&lt;/b&gt;&lt;br&gt;Deployment · NodePort&lt;br&gt;TLS termination · ACME&lt;br&gt;Per-instance WAF targets only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=15;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=12;spacingTop=8;spacingBottom=8;" vertex="1" parent="p2_caddy_lane">
+          <mxGeometry x="740" y="75" width="260" height="145" as="geometry" />
         </mxCell>
         <mxCell id="p2_caddy_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%230EA5E9%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M256%200c4.6%200%209.2%201%2013.4%202.9L457.7%2082.8c22%209.3%2038.4%2031%2038.3%2057.2c-.5%2099.2-41.3%20280.7-213.6%20363.2c-16.7%208-36.1%208-52.8%200C57.3%20420.7%2016.5%20239.2%2016%20140c-.1-26.2%2016.3-47.9%2038.3-57.2L242.7%202.9C246.8%201%20251.4%200%20256%200z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p2_caddy">
           <mxGeometry x="16" y="57" width="32" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="p2_coders" value="&lt;b&gt;Coder 1…N&lt;/b&gt;&lt;br&gt;ClusterIP Services&lt;br&gt;Control planes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=16;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p2_caddy_lane">
-          <mxGeometry x="1330" y="75" width="320" height="145" as="geometry" />
+        <mxCell id="p2_waf" value="&lt;b&gt;In-house Coder WAF 1…N&lt;/b&gt;&lt;br&gt;1:1 with Coder · app-code-instance&lt;br&gt;Selected product-function restrictions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDFA;strokeColor=#0F766E;strokeWidth=2;fontSize=15;fontColor=#134E4A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=12;spacingTop=8;spacingBottom=8;" vertex="1" parent="p2_caddy_lane">
+          <mxGeometry x="1090" y="75" width="280" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_waf_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cpath%20fill%3D%22%230F766E%22%20d%3D%22M32%204%2056%2014v18c0%2014-10%2024-24%2028C18%2056%208%2046%208%2032V14L32%204Z%22%2F%3E%3Cpath%20d%3D%22M18%2024h28M18%2032h28M18%2040h28M25%2020v8M39%2028v8M25%2036v8%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p2_waf">
+          <mxGeometry x="16" y="56" width="32" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_coders" value="&lt;b&gt;Coder 1…N&lt;/b&gt;&lt;br&gt;ClusterIP Services&lt;br&gt;Control planes&lt;br&gt;Filtered requests only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=15;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=12;spacingTop=8;spacingBottom=8;" vertex="1" parent="p2_caddy_lane">
+          <mxGeometry x="1450" y="75" width="280" height="145" as="geometry" />
         </mxCell>
         <mxCell id="p2_coders_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20rx%3D%2246%22%20fill%3D%22%230F172A%22%2F%3E%3Cpath%20d%3D%22M73.6815%2064C116.338%2064.0001%20140.252%2085.6012%20141.06%20117.397L104.22%20118.606C103.25%20100.98%2088.6272%2089.4022%2073.6815%2089.7474C53.1607%2090.1795%2037.9709%20104.782%2037.9708%20127.938C37.9708%20151.093%2053.1603%20165.437%2073.6815%20165.437C88.6272%20165.436%20102.926%20154.377%20104.543%20136.75L141.383%20137.615C140.414%20169.929%20115.046%20191.875%2073.6815%20191.875C32.3167%20191.875%200%20166.818%200%20127.938C0.000151497%2088.8837%2031.0241%2064%2073.6815%2064ZM256%2067.7783V188.742H159.053V67.7783H256Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p2_coders">
           <mxGeometry x="16" y="57" width="32" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p2_acme" value="&lt;b&gt;ACME authority&lt;/b&gt;&lt;br&gt;Per-instance certificate&lt;br&gt;instance.base-domain&lt;br&gt;*.instance.base-domain" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#EA580C;strokeWidth=2;fontSize=14;fontColor=#7C2D12;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p2_caddy_lane">
-          <mxGeometry x="900" y="245" width="300" height="100" as="geometry" />
+          <mxGeometry x="740" y="245" width="260" height="100" as="geometry" />
         </mxCell>
         <mxCell id="p2_acme_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%23EA580C%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M211%207.3C205%201%20196-1.4%20187.6%20.8s-14.9%208.9-17.1%2017.3L154.7%2080.6l-62-17.5c-8.4-2.4-17.4%200-23.5%206.1s-8.5%2015.1-6.1%2023.5l17.5%2062L18.1%20170.6c-8.4%202.1-15%208.7-17.3%2017.1S1%20205%207.3%20211l46.2%2045L7.3%20301C1%20307-1.4%20316%20.8%20324.4s8.9%2014.9%2017.3%2017.1l62.5%2015.8-17.5%2062c-2.4%208.4%200%2017.4%206.1%2023.5s15.1%208.5%2023.5%206.1l62-17.5%2015.8%2062.5c2.1%208.4%208.7%2015%2017.1%2017.3s17.3-.2%2023.4-6.4l45-46.2%2045%2046.2c6.1%206.2%2015%208.7%2023.4%206.4s14.9-8.9%2017.1-17.3l15.8-62.5%2062%2017.5c8.4%202.4%2017.4%200%2023.5-6.1s8.5-15.1%206.1-23.5l-17.5-62%2062.5-15.8c8.4-2.1%2015-8.7%2017.3-17.1s-.2-17.4-6.4-23.4l-46.2-45%2046.2-45c6.2-6.1%208.7-15%206.4-23.4s-8.9-14.9-17.3-17.1l-62.5-15.8%2017.5-62c2.4-8.4%200-17.4-6.1-23.5s-15.1-8.5-23.5-6.1l-62%2017.5L341.4%2018.1c-2.1-8.4-8.7-15-17.1-17.3S307%201%20301%207.3L256%2053.5%20211%207.3z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p2_acme">
           <mxGeometry x="16" y="36" width="28" height="28" as="geometry" />
@@ -210,7 +218,10 @@
         <mxCell id="p2_e_l4_caddy" value="TCP 443" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p2_l4_lb" target="p2_caddy">
           <mxGeometry relative="1" as="geometry"></mxGeometry>
         </mxCell>
-        <mxCell id="p2_e_caddy_coders" value="Coder endpoints only" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p2_caddy" target="p2_coders">
+        <mxCell id="p2_e_caddy_waf" value="Route N" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p2_caddy" target="p2_waf">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="p2_e_waf_coders" value="Filtered" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p2_waf" target="p2_coders">
           <mxGeometry relative="1" as="geometry"></mxGeometry>
         </mxCell>
         <mxCell id="p2_e_caddy_acme" value="ACME issuance" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;startArrow=block;startFill=1;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p2_caddy" target="p2_acme">
@@ -231,8 +242,8 @@
         <mxCell id="p2_e_certis_tls_lb" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;dashed=1;endArrow=block;endFill=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="p2_certis" target="p2_tls_lb">
           <mxGeometry relative="1" as="geometry"></mxGeometry>
         </mxCell>
-        <mxCell id="p2_footer" value="&lt;b&gt;Key points&lt;/b&gt;&lt;br&gt;① The infrastructure L4 Load Balancer forwards TCP 443; Caddy owns ACME/TLS and forwards only to Coder endpoints. &amp;nbsp;&amp;nbsp; ② Browser users use the Coder workspace page; add-ons and CLI use the Coder-provided access proxy; the agent initiates the Workload tunnel. &amp;nbsp;&amp;nbsp; ③ The infrastructure TLS Load Balancer terminates TLS for other products; Certis manages its certificate. &amp;nbsp;&amp;nbsp; ④ HAProxy enforces Basic Auth for Flower and Prometheus." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0F172A;fontColor=#FFFFFF;fontSize=16;align=left;verticalAlign=middle;spacingLeft=22;spacingRight=22;spacingTop=12;spacingBottom=12;" vertex="1" parent="1">
-          <mxGeometry x="60" y="930" width="1800" height="100" as="geometry" />
+        <mxCell id="p2_footer" value="&lt;b&gt;Key points&lt;/b&gt;&lt;br&gt;① The infrastructure L4 Load Balancer forwards TCP 443; Caddy owns ACME/TLS and targets only the dedicated WAFs. &amp;nbsp;&amp;nbsp; ② One in-house WAF per Coder restricts selected product functions before proxying to its Coder. &amp;nbsp;&amp;nbsp; ③ Browser, add-on, CLI, and agent channels follow the same Caddy → WAF → Coder path. &amp;nbsp;&amp;nbsp; ④ The infrastructure TLS Load Balancer terminates TLS for other products; Certis manages its certificate. &amp;nbsp;&amp;nbsp; ⑤ HAProxy enforces Basic Auth for Flower and Prometheus." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0F172A;fontColor=#FFFFFF;fontSize=16;align=left;verticalAlign=middle;spacingLeft=22;spacingRight=22;spacingTop=12;spacingBottom=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="920" width="1800" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -512,7 +523,7 @@
         <mxCell id="p5_title" value="&lt;b&gt;Central deployment and 1:1 provisioning&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=32;fontColor=#0F172A;" vertex="1" parent="1">
           <mxGeometry x="60" y="32" width="1450" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="p5_subtitle" value="Argo CD deploys control planes; each Coder provisions its Workload cluster" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=18;fontColor=#475569;" vertex="1" parent="1">
+        <mxCell id="p5_subtitle" value="Argo CD deploys each logical WAF + Coder control-plane unit; only Coder provisions its Workload cluster" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=18;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="60" y="84" width="1450" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p5_badge" value="&lt;b&gt;05 / 09 · PROVISIONING&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0F172A;fontColor=#FFFFFF;fontStyle=1;fontSize=14;" vertex="1" parent="1">
@@ -539,60 +550,84 @@
         <mxCell id="p5_argo_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%23EA580C%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M105.1%20202.6c7.7-21.8%2020.2-42.3%2037.8-59.8c62.5-62.5%20163.8-62.5%20226.3%200L386.3%20160%20352%20160c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032l111.5%200c0%200%200%200%200%200l.4%200c17.7%200%2032-14.3%2032-32l0-112c0-17.7-14.3-32-32-32s-32%2014.3-32%2032l0%2035.2L414.4%2097.6c-87.5-87.5-229.3-87.5-316.8%200C73.2%20122%2055.6%20150.7%2044.8%20181.4c-5.9%2016.7%202.9%2034.9%2019.5%2040.8s34.9-2.9%2040.8-19.5zM39%20289.3c-5%201.5-9.8%204.2-13.7%208.2c-4%204-6.7%208.8-8.1%2014c-.3%201.2-.6%202.5-.8%203.8c-.3%201.7-.4%203.4-.4%205.1L16%20432c0%2017.7%2014.3%2032%2032%2032s32-14.3%2032-32l0-35.1%2017.6%2017.5c0%200%200%200%200%200c87.5%2087.4%20229.3%2087.4%20316.7%200c24.4-24.4%2042.1-53.1%2052.9-83.8c5.9-16.7-2.9-34.9-19.5-40.8s-34.9%202.9-40.8%2019.5c-7.7%2021.8-20.2%2042.3-37.8%2059.8c-62.5%2062.5-163.8%2062.5-226.3%200l-.1-.1L125.6%20352l34.4%200c17.7%200%2032-14.3%2032-32s-14.3-32-32-32L48.4%20288c-1.6%200-3.2%20.1-4.8%20.3s-3.1%20.5-4.6%201z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p5_argo">
           <mxGeometry x="16" y="64" width="32" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="p5_central" value="app-code-instance — central control planes" style="swimlane;horizontal=1;startSize=46;rounded=1;html=1;fillColor=#EFF6FF;swimlaneFillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontStyle=1;fontSize=18;fontColor=#1E3A8A;" vertex="1" parent="1">
-          <mxGeometry x="800" y="150" width="430" height="700" as="geometry" />
+        <mxCell id="p5_central" value="app-code-instance — 1:1 WAF + Coder" style="swimlane;horizontal=1;startSize=46;rounded=1;html=1;fillColor=#EFF6FF;swimlaneFillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontStyle=1;fontSize=18;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="780" y="150" width="520" height="700" as="geometry" />
         </mxCell>
-        <mxCell id="p5_coder1" value="&lt;b&gt;Coder 1&lt;/b&gt;&lt;br&gt;Deployment · ClusterIP Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=16;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p5_central">
-          <mxGeometry x="50" y="100" width="330" height="140" as="geometry" />
+        <mxCell id="p5_instance1" value="Instance 1 · logical 1:1 WAF / Coder unit" style="swimlane;horizontal=1;startSize=34;rounded=1;html=1;fillColor=#FFFFFF;swimlaneFillColor=#EFF6FF;strokeColor=#60A5FA;strokeWidth=2;fontStyle=1;fontSize=15;fontColor=#1E3A8A;" vertex="1" parent="p5_central">
+          <mxGeometry x="30" y="50" width="460" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="p5_waf1" value="&lt;b&gt;In-house Coder WAF 1&lt;/b&gt;&lt;br&gt;Selected product-function restrictions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDFA;strokeColor=#0F766E;strokeWidth=2;fontSize=15;fontColor=#134E4A;align=left;verticalAlign=middle;spacingLeft=58;spacingRight=12;spacingTop=6;spacingBottom=6;" vertex="1" parent="p5_instance1">
+          <mxGeometry x="25" y="50" width="410" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="p5_waf1_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cpath%20fill%3D%22%230F766E%22%20d%3D%22M32%204%2056%2014v18c0%2014-10%2024-24%2028C18%2056%208%2046%208%2032V14L32%204Z%22%2F%3E%3Cpath%20d%3D%22M18%2024h28M18%2032h28M18%2040h28M25%2020v8M39%2028v8M25%2036v8%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p5_waf1">
+          <mxGeometry x="16" y="22" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p5_coder1" value="&lt;b&gt;Coder 1&lt;/b&gt;&lt;br&gt;Deployment · ClusterIP Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=15;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=58;spacingRight=12;spacingTop=6;spacingBottom=6;" vertex="1" parent="p5_instance1">
+          <mxGeometry x="25" y="160" width="410" height="75" as="geometry" />
         </mxCell>
         <mxCell id="p5_coder1_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20rx%3D%2246%22%20fill%3D%22%230F172A%22%2F%3E%3Cpath%20d%3D%22M73.6815%2064C116.338%2064.0001%20140.252%2085.6012%20141.06%20117.397L104.22%20118.606C103.25%20100.98%2088.6272%2089.4022%2073.6815%2089.7474C53.1607%2090.1795%2037.9709%20104.782%2037.9708%20127.938C37.9708%20151.093%2053.1603%20165.437%2073.6815%20165.437C88.6272%20165.436%20102.926%20154.377%20104.543%20136.75L141.383%20137.615C140.414%20169.929%20115.046%20191.875%2073.6815%20191.875C32.3167%20191.875%200%20166.818%200%20127.938C0.000151497%2088.8837%2031.0241%2064%2073.6815%2064ZM256%2067.7783V188.742H159.053V67.7783H256Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p5_coder1">
-          <mxGeometry x="16" y="54" width="32" height="32" as="geometry" />
+          <mxGeometry x="16" y="22" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="p5_codern" value="&lt;b&gt;Coder N&lt;/b&gt;&lt;br&gt;Deployment · ClusterIP Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=16;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p5_central">
-          <mxGeometry x="50" y="385" width="330" height="140" as="geometry" />
+        <mxCell id="p5_instancen" value="Instance N · logical 1:1 WAF / Coder unit" style="swimlane;horizontal=1;startSize=34;rounded=1;html=1;fillColor=#FFFFFF;swimlaneFillColor=#EFF6FF;strokeColor=#60A5FA;strokeWidth=2;fontStyle=1;fontSize=15;fontColor=#1E3A8A;" vertex="1" parent="p5_central">
+          <mxGeometry x="30" y="330" width="460" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="p5_wafn" value="&lt;b&gt;In-house Coder WAF N&lt;/b&gt;&lt;br&gt;Selected product-function restrictions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDFA;strokeColor=#0F766E;strokeWidth=2;fontSize=15;fontColor=#134E4A;align=left;verticalAlign=middle;spacingLeft=58;spacingRight=12;spacingTop=6;spacingBottom=6;" vertex="1" parent="p5_instancen">
+          <mxGeometry x="25" y="50" width="410" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="p5_wafn_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cpath%20fill%3D%22%230F766E%22%20d%3D%22M32%204%2056%2014v18c0%2014-10%2024-24%2028C18%2056%208%2046%208%2032V14L32%204Z%22%2F%3E%3Cpath%20d%3D%22M18%2024h28M18%2032h28M18%2040h28M25%2020v8M39%2028v8M25%2036v8%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p5_wafn">
+          <mxGeometry x="16" y="22" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p5_codern" value="&lt;b&gt;Coder N&lt;/b&gt;&lt;br&gt;Deployment · ClusterIP Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=15;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=58;spacingRight=12;spacingTop=6;spacingBottom=6;" vertex="1" parent="p5_instancen">
+          <mxGeometry x="25" y="160" width="410" height="75" as="geometry" />
         </mxCell>
         <mxCell id="p5_codern_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20rx%3D%2246%22%20fill%3D%22%230F172A%22%2F%3E%3Cpath%20d%3D%22M73.6815%2064C116.338%2064.0001%20140.252%2085.6012%20141.06%20117.397L104.22%20118.606C103.25%20100.98%2088.6272%2089.4022%2073.6815%2089.7474C53.1607%2090.1795%2037.9709%20104.782%2037.9708%20127.938C37.9708%20151.093%2053.1603%20165.437%2073.6815%20165.437C88.6272%20165.436%20102.926%20154.377%20104.543%20136.75L141.383%20137.615C140.414%20169.929%20115.046%20191.875%2073.6815%20191.875C32.3167%20191.875%200%20166.818%200%20127.938C0.000151497%2088.8837%2031.0241%2064%2073.6815%2064ZM256%2067.7783V188.742H159.053V67.7783H256Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p5_codern">
-          <mxGeometry x="16" y="54" width="32" height="32" as="geometry" />
+          <mxGeometry x="16" y="22" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="p5_no_workspace" value="&lt;b&gt;No workspace pods&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#DC2626;strokeWidth=2;fontSize=15;fontColor=#991B1B;align=center;verticalAlign=middle;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p5_central">
-          <mxGeometry x="50" y="570" width="330" height="75" as="geometry" />
+          <mxGeometry x="30" y="615" width="460" height="55" as="geometry" />
         </mxCell>
         <mxCell id="p5_external" value="External Kubernetes Workload clusters" style="swimlane;horizontal=1;startSize=46;rounded=1;html=1;fillColor=#FFF7ED;swimlaneFillColor=#FFEDD5;strokeColor=#EA580C;strokeWidth=2;dashed=1;fontStyle=1;fontSize=18;fontColor=#7C2D12;" vertex="1" parent="1">
           <mxGeometry x="1400" y="150" width="460" height="700" as="geometry" />
         </mxCell>
         <mxCell id="p5_workload1" value="&lt;b&gt;Workload Cluster 1&lt;/b&gt;&lt;br&gt;Kubernetes API&lt;br&gt;Workspace products · agents&lt;br&gt;Local Path/XFS quota · NFS/Trident" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;fontSize=16;fontColor=#7C2D12;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p5_external">
-          <mxGeometry x="50" y="100" width="360" height="140" as="geometry" />
+          <mxGeometry x="50" y="178" width="360" height="140" as="geometry" />
         </mxCell>
         <mxCell id="p5_workload1_icon" value="" style="shape=mxgraph.kubernetes.icon2;prIcon=pod;aspect=fixed;sketch=0;html=1;dashed=0;whiteSpace=wrap;fillColor=#326CE5;strokeColor=#FFFFFF;pointerEvents=0;" vertex="1" connectable="0" parent="p5_workload1">
           <mxGeometry x="16" y="54" width="32" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p5_workloadn" value="&lt;b&gt;Workload Cluster N&lt;/b&gt;&lt;br&gt;Kubernetes API&lt;br&gt;Workspace products · agents&lt;br&gt;Local Path/XFS quota · NFS/Trident" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;fontSize=16;fontColor=#7C2D12;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p5_external">
-          <mxGeometry x="50" y="385" width="360" height="140" as="geometry" />
+          <mxGeometry x="50" y="458" width="360" height="140" as="geometry" />
         </mxCell>
         <mxCell id="p5_workloadn_icon" value="" style="shape=mxgraph.kubernetes.icon2;prIcon=pod;aspect=fixed;sketch=0;html=1;dashed=0;whiteSpace=wrap;fillColor=#326CE5;strokeColor=#FFFFFF;pointerEvents=0;" vertex="1" connectable="0" parent="p5_workloadn">
           <mxGeometry x="16" y="54" width="32" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p5_outscope" value="&lt;b&gt;No central Argo CD or Prometheus&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#DC2626;strokeWidth=2;fontSize=15;fontColor=#991B1B;align=center;verticalAlign=middle;spacingLeft=14;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p5_external">
-          <mxGeometry x="50" y="570" width="360" height="75" as="geometry" />
+          <mxGeometry x="50" y="620" width="360" height="50" as="geometry" />
         </mxCell>
         <mxCell id="p5_e_manager_argo" value="Argo API" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p5_manager" target="p5_argo">
           <mxGeometry relative="1" as="geometry"></mxGeometry>
         </mxCell>
-        <mxCell id="p5_e_argo_coder1" value="Helm" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p5_argo" target="p5_coder1">
+        <mxCell id="p5_e_argo_instance1" value="Helm unit" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p5_argo" target="p5_instance1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="750" y="290" />
-              <mxPoint x="850" y="290" />
+              <mxPoint x="750" y="420" />
+              <mxPoint x="750" y="330" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="p5_e_argo_codern" value="Helm" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p5_argo" target="p5_codern">
+        <mxCell id="p5_e_argo_instancen" value="Helm unit" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p5_argo" target="p5_instancen">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="750" y="605" />
-              <mxPoint x="850" y="605" />
+              <mxPoint x="750" y="420" />
+              <mxPoint x="750" y="610" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="p5_e_waf1_coder1" value="Filtered traffic" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p5_waf1" target="p5_coder1">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="p5_e_wafn_codern" value="Filtered traffic" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p5_wafn" target="p5_codern">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
         </mxCell>
         <mxCell id="p5_e_coder1_workload1" value="Kubernetes API" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p5_coder1" target="p5_workload1">
           <mxGeometry relative="1" as="geometry"></mxGeometry>
@@ -600,7 +635,7 @@
         <mxCell id="p5_e_codern_workloadn" value="Kubernetes API" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#EA580C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p5_codern" target="p5_workloadn">
           <mxGeometry relative="1" as="geometry"></mxGeometry>
         </mxCell>
-        <mxCell id="p5_footer" value="&lt;b&gt;Key points&lt;/b&gt;&lt;br&gt;① Argo CD stops at the central cluster. &amp;nbsp;&amp;nbsp; ② Each Coder calls its dedicated cluster’s Kubernetes API directly. &amp;nbsp;&amp;nbsp; ③ Manager never provisions workspace pods." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0F172A;fontColor=#FFFFFF;fontSize=16;align=left;verticalAlign=middle;spacingLeft=22;spacingRight=22;spacingTop=12;spacingBottom=12;" vertex="1" parent="1">
+        <mxCell id="p5_footer" value="&lt;b&gt;Key points&lt;/b&gt;&lt;br&gt;① Argo CD deploys each logical 1:1 WAF + Coder unit and stops at the central cluster. &amp;nbsp;&amp;nbsp; ② The WAF only filters Coder product traffic; it never provisions Workspaces. &amp;nbsp;&amp;nbsp; ③ Each Coder calls its dedicated cluster’s Kubernetes API directly. &amp;nbsp;&amp;nbsp; ④ Manager never provisions workspace pods." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0F172A;fontColor=#FFFFFF;fontSize=16;align=left;verticalAlign=middle;spacingLeft=22;spacingRight=22;spacingTop=12;spacingBottom=12;" vertex="1" parent="1">
           <mxGeometry x="60" y="925" width="1800" height="100" as="geometry" />
         </mxCell>
       </root>
@@ -827,49 +862,55 @@
         <mxCell id="p6_title" value="&lt;b&gt;Runtime, application, and package flows&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=32;fontColor=#0F172A;" vertex="1" parent="1">
           <mxGeometry x="60" y="32" width="1450" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="p6_subtitle" value="Coder mediates user access; Workspace egress may use the corporate proxy or direct Artifactory access for development packages" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=18;fontColor=#475569;" vertex="1" parent="1">
+        <mxCell id="p6_subtitle" value="Coder access traverses a dedicated per-instance WAF; Workspace egress may use the corporate proxy or Artifactory directly" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=18;fontColor=#475569;" vertex="1" parent="1">
           <mxGeometry x="60" y="84" width="1450" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p6_badge" value="&lt;b&gt;08 / 09 · RUNTIME&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0F172A;fontColor=#FFFFFF;fontStyle=1;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="1580" y="44" width="280" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="p6_coder_lane" value="Coder-mediated Workspace access and agent-initiated tunnel — via infrastructure L4 Load Balancer" style="swimlane;horizontal=1;startSize=46;rounded=1;html=1;fillColor=#EFF6FF;swimlaneFillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontStyle=1;fontSize=18;fontColor=#1E3A8A;" vertex="1" parent="1">
+        <mxCell id="p6_coder_lane" value="Coder-mediated access: L4 Load Balancer → Caddy TLS → dedicated WAF → Coder · agent-initiated tunnel" style="swimlane;horizontal=1;startSize=46;rounded=1;html=1;fillColor=#EFF6FF;swimlaneFillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontStyle=1;fontSize=18;fontColor=#1E3A8A;" vertex="1" parent="1">
           <mxGeometry x="60" y="150" width="1800" height="340" as="geometry" />
         </mxCell>
         <mxCell id="p6_user" value="&lt;b&gt;User&lt;/b&gt;&lt;br&gt;Browser · add-on · CLI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=16;fontColor=#1E3A8A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p6_coder_lane">
-          <mxGeometry x="40" y="90" width="180" height="120" as="geometry" />
+          <mxGeometry x="30" y="90" width="170" height="120" as="geometry" />
         </mxCell>
         <mxCell id="p6_user_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%232563EB%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20448%20512%22%3E%3Cpath%20d%3D%22M224%20256A128%20128%200%201%200%20224%200a128%20128%200%201%200%200%20256zm-45.7%2048C79.8%20304%200%20383.8%200%20482.3C0%20498.7%2013.3%20512%2029.7%20512l388.6%200c16.4%200%2029.7-13.3%2029.7-29.7C448%20383.8%20368.2%20304%20269.7%20304l-91.4%200z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p6_user">
           <mxGeometry x="16" y="44" width="32" height="32" as="geometry" />
         </mxCell>
 
         <mxCell id="p6_access_channels" value="&lt;b&gt;Client access modes&lt;/b&gt;&lt;br&gt;Browser → Coder workspace page&lt;br&gt;Add-on / CLI → Coder access proxy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=2;fontSize=15;fontColor=#1E3A8A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p6_coder_lane">
-          <mxGeometry x="300" y="75" width="300" height="150" as="geometry" />
+          <mxGeometry x="240" y="75" width="260" height="150" as="geometry" />
         </mxCell>
         <mxCell id="p6_access_channels_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20x%3D%226%22%20y%3D%2210%22%20width%3D%2252%22%20height%3D%2244%22%20rx%3D%228%22%20fill%3D%22%232563EB%22%2F%3E%3Cpath%20d%3D%22M6%2022h52%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%2216%22%20r%3D%222%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M16%2038h24l-5-5%204-4%2012%2012-12%2012-4-4%205-5H16v-6Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p6_access_channels">
           <mxGeometry x="16" y="59" width="32" height="32" as="geometry" />
         </mxCell>
 
         <mxCell id="p6_caddy" value="&lt;b&gt;Caddy&lt;/b&gt;&lt;br&gt;ACME · TLS termination" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=16;fontColor=#1E3A8A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p6_coder_lane">
-          <mxGeometry x="700" y="90" width="240" height="120" as="geometry" />
+          <mxGeometry x="580" y="90" width="220" height="120" as="geometry" />
         </mxCell>
         <mxCell id="p6_caddy_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%230EA5E9%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M256%200c4.6%200%209.2%201%2013.4%202.9L457.7%2082.8c22%209.3%2038.4%2031%2038.3%2057.2c-.5%2099.2-41.3%20280.7-213.6%20363.2c-16.7%208-36.1%208-52.8%200C57.3%20420.7%2016.5%20239.2%2016%20140c-.1-26.2%2016.3-47.9%2038.3-57.2L242.7%202.9C246.8%201%20251.4%200%20256%200z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p6_caddy">
           <mxGeometry x="16" y="44" width="32" height="32" as="geometry" />
         </mxCell>
+        <mxCell id="p6_waf" value="&lt;b&gt;In-house WAF 1…N&lt;/b&gt;&lt;br&gt;1:1 with Coder&lt;br&gt;Selected function restrictions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDFA;strokeColor=#0F766E;strokeWidth=2;fontSize=15;fontColor=#134E4A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p6_coder_lane">
+          <mxGeometry x="860" y="80" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p6_waf_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cpath%20fill%3D%22%230F766E%22%20d%3D%22M32%204%2056%2014v18c0%2014-10%2024-24%2028C18%2056%208%2046%208%2032V14L32%204Z%22%2F%3E%3Cpath%20d%3D%22M18%2024h28M18%2032h28M18%2040h28M25%2020v8M39%2028v8M25%2036v8%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p6_waf">
+          <mxGeometry x="16" y="54" width="32" height="32" as="geometry" />
+        </mxCell>
         <mxCell id="p6_coder" value="&lt;b&gt;Coder 1…N endpoints&lt;/b&gt;&lt;br&gt;Workspace web page&lt;br&gt;Access proxy · agent endpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=16;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p6_coder_lane">
-          <mxGeometry x="1040" y="80" width="280" height="140" as="geometry" />
+          <mxGeometry x="1160" y="80" width="240" height="140" as="geometry" />
         </mxCell>
         <mxCell id="p6_coder_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20rx%3D%2246%22%20fill%3D%22%230F172A%22%2F%3E%3Cpath%20d%3D%22M73.6815%2064C116.338%2064.0001%20140.252%2085.6012%20141.06%20117.397L104.22%20118.606C103.25%20100.98%2088.6272%2089.4022%2073.6815%2089.7474C53.1607%2090.1795%2037.9709%20104.782%2037.9708%20127.938C37.9708%20151.093%2053.1603%20165.437%2073.6815%20165.437C88.6272%20165.436%20102.926%20154.377%20104.543%20136.75L141.383%20137.615C140.414%20169.929%20115.046%20191.875%2073.6815%20191.875C32.3167%20191.875%200%20166.818%200%20127.938C0.000151497%2088.8837%2031.0241%2064%2073.6815%2064ZM256%2067.7783V188.742H159.053V67.7783H256Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p6_coder">
           <mxGeometry x="16" y="54" width="32" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p6_app" value="&lt;b&gt;Workspace products&lt;/b&gt;&lt;br&gt;VS Code · OpenCode · tools&lt;br&gt;External cluster&lt;br&gt;No direct ingress" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#EA580C;strokeWidth=2;fontSize=16;fontColor=#7C2D12;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p6_coder_lane">
-          <mxGeometry x="1390" y="40" width="300" height="130" as="geometry" />
+          <mxGeometry x="1460" y="40" width="290" height="130" as="geometry" />
         </mxCell>
         <mxCell id="p6_app_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%23F97316%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20640%20512%22%3E%3Cpath%20d%3D%22M64%2096c0-35.3%2028.7-64%2064-64l384%200c35.3%200%2064%2028.7%2064%2064l0%20256-64%200%200-256L128%2096l0%20256-64%200L64%2096zM0%20403.2C0%20392.6%208.6%20384%2019.2%20384l601.6%200c10.6%200%2019.2%208.6%2019.2%2019.2c0%2042.4-34.4%2076.8-76.8%2076.8L76.8%20480C34.4%20480%200%20445.6%200%20403.2zM281%20209l-31%2031%2031%2031c9.4%209.4%209.4%2024.6%200%2033.9s-24.6%209.4-33.9%200l-48-48c-9.4-9.4-9.4-24.6%200-33.9l48-48c9.4-9.4%2024.6-9.4%2033.9%200s9.4%2024.6%200%2033.9zM393%20175l48%2048c9.4%209.4%209.4%2024.6%200%2033.9l-48%2048c-9.4%209.4-24.6%209.4-33.9%200s-9.4-24.6%200-33.9l31-31-31-31c-9.4-9.4-9.4-24.6%200-33.9s24.6-9.4%2033.9%200z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p6_app">
           <mxGeometry x="16" y="49" width="32" height="32" as="geometry" />
         </mxCell>
         <mxCell id="p6_agent" value="&lt;b&gt;Workspace agent&lt;/b&gt;&lt;br&gt;Initiates tunnel&lt;br&gt;Local application proxy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#EA580C;strokeWidth=2;fontSize=15;fontColor=#7C2D12;align=left;verticalAlign=middle;spacingLeft=60;spacingRight=14;spacingTop=8;spacingBottom=8;" vertex="1" parent="p6_coder_lane">
-          <mxGeometry x="1390" y="220" width="300" height="90" as="geometry" />
+          <mxGeometry x="1460" y="220" width="290" height="90" as="geometry" />
         </mxCell>
         <mxCell id="p6_agent_icon" value="" style="shape=image;html=1;imageAspect=0;aspect=fixed;image=data:image/svg+xml,%3Csvg%20fill%3D%22%23F97316%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20640%20512%22%3E%3Cpath%20d%3D%22M64%2096c0-35.3%2028.7-64%2064-64l384%200c35.3%200%2064%2028.7%2064%2064l0%20256-64%200%200-256L128%2096l0%20256-64%200L64%2096zM0%20403.2C0%20392.6%208.6%20384%2019.2%20384l601.6%200c10.6%200%2019.2%208.6%2019.2%2019.2c0%2042.4-34.4%2076.8-76.8%2076.8L76.8%20480C34.4%20480%200%20445.6%200%20403.2zM281%20209l-31%2031%2031%2031c9.4%209.4%209.4%2024.6%200%2033.9s-24.6%209.4-33.9%200l-48-48c-9.4-9.4-9.4-24.6%200-33.9l48-48c9.4-9.4%2024.6-9.4%2033.9%200s9.4%2024.6%200%2033.9zM393%20175l48%2048c9.4%209.4%209.4%2024.6%200%2033.9l-48%2048c-9.4%209.4-24.6%209.4-33.9%200s-9.4-24.6%200-33.9l31-31-31-31c-9.4-9.4-9.4-24.6%200-33.9s24.6-9.4%2033.9%200z%22%2F%3E%3C%2Fsvg%3E;strokeColor=none;fillColor=none;pointerEvents=0;" vertex="1" connectable="0" parent="p6_agent">
           <mxGeometry x="16" y="29" width="32" height="32" as="geometry" />
@@ -922,14 +963,17 @@
         <mxCell id="p6_e_channels_caddy" value="Via L4 LB" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p6_access_channels" target="p6_caddy">
           <mxGeometry relative="1" as="geometry"></mxGeometry>
         </mxCell>
-        <mxCell id="p6_e_caddy_coder" value="Coder endpoints" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p6_caddy" target="p6_coder">
+        <mxCell id="p6_e_caddy_waf" value="Route N" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p6_caddy" target="p6_waf">
+          <mxGeometry relative="1" as="geometry"></mxGeometry>
+        </mxCell>
+        <mxCell id="p6_e_waf_coder" value="Filtered" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p6_waf" target="p6_coder">
           <mxGeometry relative="1" as="geometry"></mxGeometry>
         </mxCell>
         <mxCell id="p6_e_coder_agent" value="Traffic over established tunnel" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;dashed=1;startArrow=block;startFill=1;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p6_coder" target="p6_agent">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1415" y="300" />
-              <mxPoint x="1415" y="415" />
+              <mxPoint x="1490" y="300" />
+              <mxPoint x="1490" y="415" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -939,8 +983,8 @@
         <mxCell id="p6_e_agent_caddy" value="Agent-initiated tunnel setup" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;rounded=1;html=1;strokeColor=#2563EB;strokeWidth=2.5;dashed=1;endArrow=block;endFill=1;fontStyle=1;fontSize=14;fontColor=#2563EB;labelBackgroundColor=#FFFFFF;exitX=0;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="p6_agent" target="p6_caddy">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1420" y="475" />
-              <mxPoint x="880" y="475" />
+              <mxPoint x="1490" y="475" />
+              <mxPoint x="750" y="475" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -994,8 +1038,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="p6_footer" value="&lt;b&gt;Key points&lt;/b&gt;&lt;br&gt;① Browser, add-on, and CLI access remains Coder-mediated; no user-to-pod path exists. &amp;nbsp;&amp;nbsp; ② The Workspace agent initiates the tunnel. &amp;nbsp;&amp;nbsp; ③ Certis TLS LB and HAProxy publish Marketplace and the secretless Storage proxy. &amp;nbsp;&amp;nbsp; ④ Marketplace and Storage depend on Artifactory. &amp;nbsp;&amp;nbsp; ⑤ Workspaces may access Artifactory directly for development packages. &amp;nbsp;&amp;nbsp; ⑥ Workspaces may use the company-managed corporate proxy for outbound HTTP(S)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0F172A;fontColor=#FFFFFF;fontSize=16;align=left;verticalAlign=middle;spacingLeft=22;spacingRight=22;spacingTop=12;spacingBottom=12;" vertex="1" parent="1">
-          <mxGeometry x="60" y="1090" width="1800" height="100" as="geometry" />
+        <mxCell id="p6_footer" value="&lt;b&gt;Key points&lt;/b&gt;&lt;br&gt;① Browser, add-on, and CLI access remains Coder-mediated; no user-to-pod path exists. &amp;nbsp;&amp;nbsp; ② Caddy routes every Coder request through its dedicated WAF; the WAF restricts selected product functions. &amp;nbsp;&amp;nbsp; ③ The Workspace agent initiates the tunnel through the same Caddy → WAF → Coder path. &amp;nbsp;&amp;nbsp; ④ Certis TLS LB and HAProxy publish Marketplace and the secretless Storage proxy. &amp;nbsp;&amp;nbsp; ⑤ Marketplace and Storage depend on Artifactory. &amp;nbsp;&amp;nbsp; ⑥ Workspaces may access Artifactory directly for development packages. &amp;nbsp;&amp;nbsp; ⑦ Workspaces may use the company-managed corporate proxy for outbound HTTP(S)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0F172A;fontColor=#FFFFFF;fontSize=16;align=left;verticalAlign=middle;spacingLeft=22;spacingRight=22;spacingTop=12;spacingBottom=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1080" width="1800" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
